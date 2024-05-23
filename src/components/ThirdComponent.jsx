@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Vamos a recibir unas propiedades para el componente 'Props' trae todas las propiedades del componenete
 export const ThirdComponent = (props) => {
@@ -22,17 +23,25 @@ export const ThirdComponent = (props) => {
             {/* <li>{ height } </li> */}
 
             {/* Para iterar el props de card */}
-            <li> 
+            <ul> 
             {Object.entries(props.card).map(([property, value]) => (
                 <li key={property}>
                     <strong>{property}:</strong> {value}
                 </li>
             ))}
-            </li>
+            </ul>
             
         </ul>
     </div>
   )
 }
+
+// Valido mis tipos de datos que deben llegar en el prop con ayuda del protypes, es parecido a una interfaz de Angular.
+ThirdComponent.prototype = {
+    name: PropTypes.string,
+    lastname: PropTypes.string,
+    card: PropTypes.object
+}
+
 
 // Hooks - Eventos
