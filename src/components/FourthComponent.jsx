@@ -26,6 +26,14 @@ export const FourthComponent = () => {
     console.log(`Has ${action} la caja`); 
   }
 
+  const insideInput = (e) => {
+    console.log('Estas dentro del input, Escribe tu nombre');
+  }
+
+  const outsideInput = (e) => {
+    console.log('Estas fuera del input, Escribe tu nombre');
+  }
+
   return (
     <div>
       {/* Cada elemento debe ir en un div */}
@@ -75,6 +83,11 @@ export const FourthComponent = () => {
         </div>
 
         {/* Evento Focus y Blur */}
+        <hr />
+        <div className="m-5">
+          <input type="text" placeholder="Escribir tu nombre" onFocus={insideInput} onBlur={outsideInput}/>
+        </div>
+        <hr />
       </div>
     </div>
   );
